@@ -1,38 +1,25 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter
+from FileManager import FileManager
 import os
 
 
-class Decryption:
-    def __init__(self, read_name, write_name):
-        self.read_dir = read_name
-        self.write_dir = write_name
-
-    @property
-    def read_dir(self):
-        return self._read_dir
-
-    @read_dir.setter
-    def read_dir(self, value):
-        home_dir = r'C:\\Users\Autumn'
-        self._read_dir = os.path.join(home_dir, r'Documents\Python\Python Projects\Pdf', str(value) + '.pdf')
-
-    @property
-    def write_dir(self):
-        return self._write_dir
-
-    @write_dir.setter
-    def write_dir(self, value):
-        same = os.path.split(self.read_dir)
-        self._write_dir = os.path.join(same[0], str(value) + '.pdf')
+class Decryption(FileManager):
+    def __init__(self, read_name=None, write_name=None):
+        super().__init__(read_name, write_name)
+        self.description = 'Decryption and Make New File'
 
     def decrypt_file(self, password):
-        reader = PdfFileReader(self.read_dir)
+        reader = PdfFileReader(str(self.read_dir))
         writer = PdfFileWriter()
         reader.decrypt(password)
         writer.appendPagesFromReader(reader)
 
-        with open(self.write_dir, 'wb') as output_file:
+        with self.write_dir.open(mode='wb') as output_file:
             writer.write(output_file)
+
+    def implement(self):
+        password = str(input('Password: '))
+        self.decrypt_file(password)
 
 
 if __name__ == '__main__':
