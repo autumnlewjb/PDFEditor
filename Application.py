@@ -2,6 +2,7 @@ from Encryption import Encryption
 from Decryption import Decryption
 from Split import Split
 from Extraction import Extraction
+from ConvertDocx import ConvertDocx
 
 
 menu = {
@@ -9,6 +10,7 @@ menu = {
     '2': Split(),
     '3': Encryption(),
     '4': Decryption(),
+    '5': ConvertDocx(),
 }
 
 if __name__ == '__main__':
