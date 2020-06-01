@@ -4,8 +4,11 @@ import os
 
 
 class Decryption(FileManager):
-    def __init__(self, read_name=None, write_name=None):
-        super().__init__(read_name, write_name)
+    # def __init__(self, read_name=None, write_name=None):
+    #     super().__init__(read_name, write_name)
+    #     self.description = 'Decryption and Make New File'
+
+    def add_description(self):
         self.description = 'Decryption and Make New File'
 
     def decrypt_file(self, password):

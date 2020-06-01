@@ -9,7 +9,7 @@ class Split(FileManager):
     def __init__(self, read_name=None, write_name=None, write_folder=None):
         super().__init__(read_name, write_name)
         self.write_folder = write_folder
-        self.description = 'Split All Pages into Small Files'
+        # self.description = 'Split All Pages into Small Files'
 
     @property
     def write_folder(self):
@@ -18,7 +18,7 @@ class Split(FileManager):
     @write_folder.setter
     def write_folder(self, value):
         p = Path()
-        self._write_folder = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'Pdf' / (str(value))
+        self._write_folder = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'Pdf' / (str(value))
 
     @property
     def write_dir(self):
@@ -27,6 +27,9 @@ class Split(FileManager):
     @write_dir.setter
     def write_dir(self, value):
         self._write_dir = value
+
+    def add_description(self):
+        self.description = 'Split All Pages into Small Files'
 
     def create_folder(self):
         if not os.path.exists(str(self.write_folder)):
@@ -58,5 +61,6 @@ class Split(FileManager):
 
 if __name__ == '__main__':
     pdf = Split('olympiad-number-theory', 'split_pdf', 'splits')
-    pdf.create_folder()
-    pdf.split_pdf()
+    # pdf.create_folder()
+    # pdf.split_pdf()
+    print(pdf.description)

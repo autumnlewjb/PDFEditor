@@ -3,8 +3,11 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 
 
 class Extraction(FileManager):
-    def __init__(self, read_name=None, write_name=None):
-        super().__init__(read_name, write_name)
+    # def __init__(self, read_name=None, write_name=None):
+    #     super().__init__(read_name, write_name)
+    #     self.description = 'Extraction to New File'
+
+    def add_description(self):
         self.description = 'Extraction to New File'
 
     def extract_pdf(self, start, stop):
@@ -26,4 +29,5 @@ class Extraction(FileManager):
 
 if __name__ == '__main__':
     new_extract = Extraction('olympiad-number-theory', 'extract')
-    new_extract.extract_pdf(4, 8)
+    # new_extract.extract_pdf(4, 8)
+    print(new_extract.description)
