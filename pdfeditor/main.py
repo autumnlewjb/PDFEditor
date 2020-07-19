@@ -5,6 +5,9 @@ from pdfeditor.extraction import Extraction
 from pdfeditor.convert_docx import ConvertDocx
 
 
+# Before running make sure to place the pdf file you would like to process into the 'resources' folder
+# And your output will be present after the process in the 'output' folder
+
 menu = {
     '1': Extraction(),
     '2': Split(),
