@@ -16,7 +16,7 @@ class FileManager(metaclass=abc.ABCMeta):
     @read_dir.setter
     def read_dir(self, value):
         p = Path()
-        self._read_dir = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'Pdf' / (str(value) + '.pdf')
+        self._read_dir = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'output' / (str(value) + '.pdf')
 
     @property
     def write_dir(self):
@@ -25,7 +25,7 @@ class FileManager(metaclass=abc.ABCMeta):
     @write_dir.setter
     def write_dir(self, value):
         p = Path()
-        self._write_dir = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'Pdf' / (str(value) + '.pdf')
+        self._write_dir = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'output' / (str(value) + '.pdf')
 
     @abc.abstractmethod
     def add_description(self):

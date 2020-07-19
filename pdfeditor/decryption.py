@@ -1,6 +1,5 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter
-from FileManager import FileManager
-import os
+from pdfeditor.file_manager import FileManager
 
 
 class Decryption(FileManager):

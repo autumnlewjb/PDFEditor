@@ -1,4 +1,4 @@
-from FileManager import FileManager
+from pdfeditor.file_manager import FileManager
 from PyPDF2 import PdfFileWriter, PdfFileReader
 import os
 from pathlib import Path
@@ -18,7 +18,7 @@ class Split(FileManager):
     @write_folder.setter
     def write_folder(self, value):
         p = Path()
-        self._write_folder = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'Pdf' / (str(value))
+        self._write_folder = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'output' / (str(value))
 
     @property
     def write_dir(self):

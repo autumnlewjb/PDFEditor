@@ -1,8 +1,8 @@
-from Encryption import Encryption
-from Decryption import Decryption
-from Split import Split
-from Extraction import Extraction
-from ConvertDocx import ConvertDocx
+from pdfeditor.encryption import Encryption
+from pdfeditor.decryption import Decryption
+from pdfeditor.split import Split
+from pdfeditor.extraction import Extraction
+from pdfeditor.convert_docx import ConvertDocx
 
 
 menu = {
