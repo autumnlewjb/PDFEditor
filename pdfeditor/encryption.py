@@ -1,6 +1,5 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter
-from pathlib import Path
-from FileManager import FileManager
+from pdfeditor.file_manager import FileManager
 
 
 class Encryption(FileManager):

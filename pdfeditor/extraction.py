@@ -1,4 +1,4 @@
-from FileManager import FileManager
+from pdfeditor.file_manager import FileManager
 from PyPDF2 import PdfFileWriter, PdfFileReader
 
 

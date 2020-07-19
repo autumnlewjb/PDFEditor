@@ -1,4 +1,4 @@
-from FileManager import FileManager
+from pdfeditor.file_manager import FileManager
 from PyPDF2 import PdfFileReader
 from docx import Document
 from pathlib import Path
@@ -15,7 +15,7 @@ class ConvertDocx(FileManager):
     @write_dir.setter
     def write_dir(self, value):
         p = Path()
-        self._write_dir = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'Pdf' / (str(value) + '.docx')
+        self._write_dir = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'output' / (str(value) + '.docx')
 
     def add_description(self):
         self.description = 'Convert PDF to Docs'

@@ -1,5 +1,6 @@
 import abc
 from pathlib import Path
+import os
 
 
 class FileManager(metaclass=abc.ABCMeta):
@@ -15,8 +16,8 @@ class FileManager(metaclass=abc.ABCMeta):
 
     @read_dir.setter
     def read_dir(self, value):
-        p = Path()
-        self._read_dir = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'Pdf' / (str(value) + '.pdf')
+        self._read_dir = Path(os.getcwd()) / '..' / 'resources' / (str(value) + '.pdf')
+        print(self._read_dir)
 
     @property
     def write_dir(self):
@@ -24,8 +25,7 @@ class FileManager(metaclass=abc.ABCMeta):
 
     @write_dir.setter
     def write_dir(self, value):
-        p = Path()
-        self._write_dir = p.home() / 'Documents' / 'Python' / 'Python Projects' / 'PdfEditor' / 'Pdf' / (str(value) + '.pdf')
+        self._write_dir = Path(os.getcwd()) / '..' / 'output' / (str(value) + '.pdf')
 
     @abc.abstractmethod
     def add_description(self):
